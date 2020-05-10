@@ -1447,6 +1447,7 @@ test('if ide is playground, serve init.js with the correct endpoint', async (t) 
     url: '/playground/init.js'
   })
   t.strictEqual(res.statusCode, 200)
+  t.strictEqual(res.headers['content-type'], 'application/javascript')
   t.matchSnapshot(res.body)
 })
 
@@ -1462,6 +1463,7 @@ test('if ide is graphiql, serve config.js with the correct endpoint', async (t) 
     url: '/graphiql/config.js'
   })
   t.strictEqual(res.statusCode, 200)
+  t.strictEqual(res.headers['content-type'], 'application/javascript')
   t.matchSnapshot(res.body)
 })
 
